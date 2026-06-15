@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types';
 export default function Header(props) {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="container-fluid">
+        <nav className="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div className="container">
                 <a className="navbar-brand" href="#">{props.title}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -17,9 +17,9 @@ export default function Header(props) {
                             <a className="nav-link" href="#">About</a>
                         </li>
                     </ul>
-                    {props.searchBar ? <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                    {props.searchBar ? <form className="d-flex" role="search" onSubmit={(e) => e.preventDefault()}>
+                        <input className="form-control me-2 custom-input" type="search" placeholder="Search" aria-label="Search" />
+                        <button className="btn btn-grad-primary py-2 px-3" type="submit">Search</button>
                     </form> : null}
                 </div>
             </div>
